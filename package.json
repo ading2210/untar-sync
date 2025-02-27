@@ -1,0 +1,17 @@
+{
+  "name": "untar-sync",
+  "version": "1.0.0",
+  "description": "untar files in the javascript, synchronously",
+  "main": "src/untar.js",
+  "keywords": [
+    "js",
+    "untar",
+    "browser",
+    "extract"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.98.0"
+  }
+}
