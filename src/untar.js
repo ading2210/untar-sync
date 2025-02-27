@@ -2,13 +2,14 @@ function untar(arrayBuffer) {
   if (!(arrayBuffer instanceof ArrayBuffer)) {
 		throw new TypeError("arrayBuffer is not an instance of ArrayBuffer.");
 	}
-  
+
   var tarFileStream = new UntarFileStream(arrayBuffer);
   var files = [];
   while (tarFileStream.hasNext()) {
     var file = tarFileStream.next();
     files.push(file);
   }
+  return files;
 }
 
 module.exports = untar;

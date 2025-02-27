@@ -21,6 +21,7 @@
       const reader = new FileReader();
       reader.onload = function (event) {
         let files = untar(reader.result);
+        console.log(files);
         document.getElementById('results').textContent = JSON.stringify(files, null, 2);
       };
       reader.onerror = function (event) {
