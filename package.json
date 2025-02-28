@@ -1,6 +1,6 @@
 {
   "name": "untar-sync",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": " A JS library for extracting tar files in a synchronous manner, based on js-untar. ",
   "main": "src/untar.js",
   "keywords": [

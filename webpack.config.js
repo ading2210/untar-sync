@@ -1,6 +1,6 @@
 const common_options = {
   mode: "development",
-  optimization: {mangleExports: false, minimize: false},
+  optimization: {mangleExports: false},
   entry: "./src/untar.js",
 }
 

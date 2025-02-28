@@ -4,7 +4,7 @@ This is a library for extracting tar files in the browser or other JS environmen
 
 ## Why not js-untar?
 
-The original library, [js-untar](https://github.com/InvokIT/js-untar), always uses [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) when extracting files. This is useful if you are using the library on the main thread, but if you're already calling the library from within a worker, then this is redundant. In some cases, you also might want a synchronous API over an async one.
+The original library, [js-untar](https://github.com/InvokIT/js-untar), always uses [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) when extracting files. This is useful if you are using the library on the main thread, but if you're already calling the library from within a worker, then this is redundant. In some cases, you also might want a synchronous API over an async one, such as if you are dealing with a purely synchronous code base (Emscripten projects for instance). If you are working with many small tar files, then spawning a worker for each one also introduces more overhead.
 
 Additionally, js-untar has requirements for newer JS features such as [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and [Blobs](https://developer.mozilla.org/en-US/docs/Web/API/Blob). These might not be available in more primitive JS engines. 
 
@@ -34,7 +34,7 @@ The `untar()` function always takes an ArrayBuffer as the only argument. It retu
 Here's another example. This extracts a `tar.gz` by using [pako](https://github.com/nodeca/pako) to decompress it first. It loads the libraries from a CDN. 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/untar-sync@1.0.2/dist/untar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/untar-sync@1.0.3/dist/untar.js"></script>
 <script>
   var compressedTar = [...];
   var tarFile = pako.deflate(compressedTar);
