@@ -31,6 +31,17 @@ var files = untar(tarFile);
 
 The `untar()` function always takes an ArrayBuffer as the only argument. It returns a list of File objects synchronously. No promises are used here.
 
+Here's another example. This extracts a `tar.gz` by using [pako](https://github.com/nodeca/pako) to decompress it first. It loads the libraries from a CDN. 
+```html
+<script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/untar-sync@1.0.2/dist/untar.js"></script>
+<script>
+  var compressedTar = [...];
+  var tarFile = pako.deflate(compressedTar);
+  var files = untar(tarFile.buffer);
+  console.log(files);
+</script>
+```
 
 ### File object
 This section is modified from the original js-untar documentation. The File objects in untar-sync are the same, although some utility functions have been removed.
