@@ -37,7 +37,7 @@ Here's another example. This extracts a `tar.gz` by using [pako](https://github.
 <script src="https://cdn.jsdelivr.net/npm/untar-sync@1.0.3/dist/untar.js"></script>
 <script>
   var compressedTar = [...];
-  var tarFile = pako.deflate(compressedTar);
+  var tarFile = pako.inflate(compressedTar);
   var files = untar(tarFile.buffer);
   console.log(files);
 </script>
